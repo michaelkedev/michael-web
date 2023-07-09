@@ -4,7 +4,7 @@
       class="relative flex flex-col items-center space-x-3 rounded-md bg-stone-800 p-5"
     >
       <img
-        :src="imgUrl"
+        :src="`/${imgUrl}`"
         class="aspect-square w-12 overflow-hidden rounded-full bg-stone-200 object-cover md:mx-8"
       />
       <div class="mt-3 font-black text-stone-300">
