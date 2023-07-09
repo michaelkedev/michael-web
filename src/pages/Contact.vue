@@ -2,7 +2,7 @@
   <div class="flex w-screen max-w-2xl justify-center p-5">
     <div class="flex w-full flex-col items-center p-5">
       <img
-        src="me.jpg"
+        src="/me.jpg"
         class="roun aspect-square w-32 rounded-full object-cover"
       />
       <div class="mt-2 text-center">
