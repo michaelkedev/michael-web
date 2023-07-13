@@ -6,3 +6,11 @@ html,
 body {
   @apply h-screen w-screen overflow-hidden;
 }
+
+.markdown * li {
+  @apply list-disc;
+}
+
+.markdown ul {
+  @apply my-3 pl-5;
+}

@@ -56,6 +56,30 @@
       d="M1.5 9.589v-.745a3 3 0 011.578-2.641l7.5-4.039a3 3 0 012.844 0l7.5 4.039A3 3 0 0122.5 8.844v.745l-8.426 4.926-.652-.35a3 3 0 00-2.844 0l-.652.35L1.5 9.59z"
     />
   </svg>
+
+  <!-- <div v-if="type === 'Python'" class="font-bold">Py</div> -->
+  <img v-if="type === 'python'" src="/python.png" />
+  <img v-if="type === 'frontend'" src="/web.png" />
+  <img v-if="type === 'java'" src="/java.png" />
+  <img v-if="type === 'eng'" src="/eng.png" />
+  <img v-if="type === 'db'" src="/db.png" />
+  <img v-if="type === 'vc'" src="/github.png" />
+  <img v-if="type === 'lr'" src="/book.png" />
+  <!-- <div v-if="type === 'Frontend'" class="pb-1 font-bold">{ }</div> -->
+
+  <svg
+    v-if="type === 'outLink'"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="h-full w-full"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"
+      clip-rule="evenodd"
+    />
+  </svg>
 </template>
 
 <script>
