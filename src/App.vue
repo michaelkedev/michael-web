@@ -11,7 +11,9 @@
         <div class="z-10">Micheal</div>
       </div>
     </div>
-    <div class="flex h-10 w-full flex-none px-2 font-mono text-stone-200 md:max-w-3xl">
+    <div
+      class="flex h-10 w-full flex-none px-2 font-mono text-stone-200 md:max-w-3xl"
+    >
       <LinkButton
         v-for="p in pages"
         v-bind="p"
@@ -19,7 +21,7 @@
         :isCurrent="currentPage === p.link"
       />
     </div>
-    <div class="text-white">
+    <div class="w-full max-w-3xl text-white">
       <router-view @routeChanged="currentPage = $event" />
     </div>
   </div>
