@@ -50,23 +50,10 @@
 </template>
 
 <script>
-import MarkdownIt from "markdown-it";
 import EList from "../components/Experience.vue";
 import SList from "../components/Skill.vue";
 import AniText from "../components/AniText.vue";
-
-const md = new MarkdownIt({
-  html: true,
-});
-
-function toMD(text) {
-  const result = text
-    .trim() // 去除首尾空白
-    .split("\n")
-    .map((t) => t.trim()) //將每行連續空白清除
-    .join("\n");
-  return md.render(result);
-}
+import { toMD } from "../utils/markdown";
 
 export default {
   data() {
