@@ -12,7 +12,7 @@
       </div>
     </div>
     <div
-      class="flex h-10 w-full flex-none px-2 font-mono text-stone-200 md:max-w-3xl"
+      class="grid h-20 w-full flex-none grid-cols-2 px-2 font-mono text-stone-200 md:flex md:h-10 md:max-w-3xl"
     >
       <LinkButton
         v-for="p in pages"
@@ -38,7 +38,7 @@ export default {
     return {
       pages: [
         { link: "/", text: "Home" },
-        { link: "/about", text: "About" },
+        // { link: "/about", text: "About" },
         { link: "/project", text: "Project" },
         { link: "/gallery", text: "Gallery" },
         { link: "/contact", text: "Contact" },
