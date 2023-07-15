@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "vite:dev": "vite",
-    "vite:build": "vite build",
     "updatePhotos": "node updatePhotos.js",
     "dev": "npm-run-all -p updatePhotos vite:dev",
-    "build": "npm-run-all -p updatePhotos vite:build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
