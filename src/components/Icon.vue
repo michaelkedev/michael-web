@@ -81,6 +81,7 @@
   <img v-if="type === 'db'" src="/db.png" />
   <img v-if="type === 'vc'" src="/github.png" />
   <img v-if="type === 'lr'" src="/book.png" />
+
   <!-- <div v-if="type === 'Frontend'" class="pb-1 font-bold">{ }</div> -->
 
   <svg
