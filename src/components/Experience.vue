@@ -42,7 +42,7 @@
           class="markdown flex-1 overflow-hidden overflow-ellipsis opacity-70"
           v-html="text"
         ></div>
-        <div class="mt-2 flex space-x-2">
+        <div class="mt-2 flex flex-wrap space-x-2">
           <div
             v-for="tag in tags"
             :key="tag"

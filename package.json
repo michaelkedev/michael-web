@@ -2,13 +2,16 @@
   "name": "michael-web",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "vite:dev": "vite",
+    "updatePhotos": "node updatePhotos.js",
+    "dev": "npm-run-all -p updatePhotos vite:dev",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "animejs": "^3.2.1",
     "markdown-it": "^13.0.1",
+    "npm-run-all": "^4.1.5",
     "vue": "^3.2.25",
     "vue-router": "^4.2.4"
   },

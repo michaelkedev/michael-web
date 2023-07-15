@@ -1,7 +1,7 @@
 <template>
   <div class="flex space-x-2 p-2">
     <div
-      class="flex-col space-y-2"
+      class="flex-col space-y-2 transition-all"
       v-for="(flow, index) in getPhotos"
       :key="index"
     >
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { files } from "../utils/photos.json";
+
 export default {
   mounted() {
     const currentPage = this.$route.path;
@@ -41,31 +43,29 @@ export default {
     // 回傳回父層
     this.$emit("routeChanged", currentPage);
 
+    window.addEventListener("resize", this.flowResize);
+    this.flowResize();
+
+    this.srcs = files.map((f) => `/gallery/${f}`);
+
     setTimeout(() => (this.loaded = true), 1000);
   },
   data() {
     return {
-      srcs: [
-        "/gallery/image (1).jpg",
-        "/gallery/image (2).jpg",
-        "/gallery/image (3).jpg",
-        "/gallery/image (4).jpg",
-        "/gallery/image (5).jpg",
-        "/gallery/image (6).jpg",
-        "/gallery/image (7).jpg",
-        "/gallery/image (8).jpg",
-        "/gallery/image (9).jpg",
-        "/gallery/image (10).jpg",
-        "/gallery/image (11).jpg",
-        "/gallery/image (12).jpg",
-        "/gallery/image (13).jpg",
-        "/gallery/image (14).jpg",
-        "/gallery/image (15).jpg",
-        "/gallery/image (16).jpg",
-      ],
-      count: 3,
+      srcs: [],
+      count: 2,
       loaded: false,
     };
+  },
+  methods: {
+    flowResize() {
+      const screen = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+
+      this.count = screen.width > 640 ? 3 : 2;
+    },
   },
   computed: {
     getPhotos() {
