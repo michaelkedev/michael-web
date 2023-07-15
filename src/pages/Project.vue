@@ -36,6 +36,7 @@ export default {
           `),
           imgTitle: "project-a",
           tags: ["Python", " YOLOv5", " Android( Java )", " MySQL"],
+          src: "senior_project.jpg",
         },
       ],
     };

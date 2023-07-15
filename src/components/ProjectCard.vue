@@ -5,7 +5,7 @@
     <!-- border border-yellow-700 -->
     <div class="h-full overflow-hidden md:w-1/2">
       <img
-        src="senior project.jpg"
+        :src="src"
         alt=""
         class="h-full w-full opacity-70 transition-all group-hover:opacity-100 md:object-cover"
       />
@@ -52,6 +52,7 @@ export default {
     imgTitle: { default: "Python" },
     tags: { default: [] },
     link: { default: "" },
+    src: { default: "" },
   },
   components: {
     Icon,
