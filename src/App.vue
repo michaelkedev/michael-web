@@ -39,6 +39,7 @@ export default {
       pages: [
         { link: "/", text: "Home" },
         { link: "/about", text: "About" },
+        { link: "/project", text: "Project" },
         { link: "/gallery", text: "Gallery" },
         { link: "/contact", text: "Contact" },
       ],
