@@ -13,7 +13,7 @@
         / -->
 
         <div
-          class="absolute z-10 h-full w-full overflow-hidden transition-all duration-[2000ms]"
+          class="absolute z-10 h-full overflow-hidden transition-all duration-[1500ms]"
           :class="loaded ? 'w-full' : 'w-0'"
         >
           <img
@@ -21,11 +21,12 @@
             class="h-full rounded-sm object-cover object-left transition-all"
           />
         </div>
+
         <img
           :src="src"
-          class="rounded-sm saturate-0 transition-all duration-[1500ms]"
-          :class="loaded ? 'opacity-100' : ' opacity-0'"
+          class="h-full w-full rounded-sm saturate-0 transition-all"
         />
+        <!--:class="loaded ? 'opacity-0' : ' opacity-100'" -->
       </div>
     </div>
   </div>
@@ -35,7 +36,7 @@
 export default {
   mounted() {
     const currentPage = this.$route.path;
-    console.log(this.$route.path);
+    // console.log(this.$route.path);
 
     // 回傳回父層
     this.$emit("routeChanged", currentPage);
