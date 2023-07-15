@@ -43,14 +43,8 @@ export default {
     // 回傳回父層
     this.$emit("routeChanged", currentPage);
 
-    window.addEventListener("resize", () => {
-      const screen = {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-
-      this.count = screen.width > 640 ? 3 : 2;
-    });
+    window.addEventListener("resize", this.flowResize);
+    this.flowResize();
 
     this.srcs = files.map((f) => `/gallery/${f}`);
 
@@ -62,6 +56,16 @@ export default {
       count: 2,
       loaded: false,
     };
+  },
+  method: {
+    flowResize() {
+      const screen = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+
+      this.count = screen.width > 640 ? 3 : 2;
+    },
   },
   computed: {
     getPhotos() {
