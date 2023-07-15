@@ -8,7 +8,7 @@
       >
         <img src="/laptop.jpg" class="absolute h-full w-full object-cover" />
         <div class="absolute h-full w-full bg-slate-500/10"></div>
-        <div class="z-10">Micheal</div>
+        <div class="z-10">Michael</div>
       </div>
     </div>
     <div
