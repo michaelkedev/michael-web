@@ -9,7 +9,7 @@
       <!-- <h1 id="animated-text">{{ animatedText }}</h1> -->
     </div>
     <div class="ml-5 flex flex-col">
-      <AniText class="mt-10 text-8xl font-bold">Michael Ke</AniText>
+      <AniText class="mt-10 text-8xl font-bold ">Michael Ke</AniText>
 
       <div class="mt-6 text-2xl font-bold">A Bit About Me</div>
       <div class="mt-2 md:max-w-xl">
