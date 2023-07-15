@@ -1,6 +1,6 @@
 <template>
-  <div class="flex w-screen max-w-2xl justify-center p-5">
-    <div class="flex w-full flex-col items-center p-5">
+  <div class="flex w-screen max-w-3xl justify-center p-5">
+    <div class="flex w-full max-w-2xl flex-col items-center p-5">
       <img
         src="/me.jpg"
         class="roun aspect-square w-32 rounded-full object-cover"
