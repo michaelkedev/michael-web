@@ -57,7 +57,7 @@ export default {
       loaded: false,
     };
   },
-  method: {
+  methods: {
     flowResize() {
       const screen = {
         width: window.innerWidth,
