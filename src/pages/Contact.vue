@@ -6,7 +6,7 @@
         class="roun aspect-square w-32 rounded-full object-cover"
       />
       <div class="mt-2 text-center">
-        <div class="font-black">Micheal</div>
+        <div class="font-black">Michael</div>
         <div class="mt-1 text-sm text-gray-600">
           <a
             href="mailto:k5855873@gmail.com"
