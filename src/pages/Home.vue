@@ -123,7 +123,7 @@ export default {
           time: "大四",
           title: "結合AI與無人機應用於工安檢測(大學專題)",
           text: toMD(`
-            利用 DJI Mobile SDK 控制空拍機自動執行航點任務，傳送即時影像到 Server，並通過 YOLOv5 檢測人員是否有配戴裝備。
+            利用 \`DJI Mobile SDK\` 控制空拍機自動執行航點任務，傳送即時影像到 Server，並通過 YOLOv5 檢測人員是否有配戴裝備。
             - YOLOv5 檢測人員身上是否有配戴工地裝備(頭盔、反光背心)
             - 透過 Java 開發 DJI Mobile SDK 開發 Android App 操控無人機
             - Line Message API & Django 架設 LineBot server 發送警告訊息
