@@ -3,14 +3,26 @@
     class="group relative flex flex-col space-y-2 overflow-hidden rounded-lg bg-stone-900 text-stone-200 shadow-md transition-all hover:bg-stone-800 md:flex-row"
   >
     <!-- border border-yellow-700 -->
-    <div class="h-full overflow-hidden md:w-1/2">
-      <img
+    <div
+      class="flex h-full items-center justify-center overflow-hidden md:w-1/3"
+    >
+      <!-- <img
         :src="src"
         alt=""
         class="h-full w-full opacity-70 transition-all group-hover:opacity-100 md:object-cover"
+      /> -->
+      <img
+        :src="src"
+        alt=""
+        :class="{
+          'h-full w-full opacity-70 transition-all group-hover:opacity-100 md:object-cover':
+            !isPng,
+          'h-32 w-32 p-3 opacity-70 transition-all group-hover:opacity-100 md:object-cover':
+            isPng,
+        }"
       />
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col md:w-2/3">
       <div class="flex min-w-0 flex-1 flex-row items-baseline px-2">
         <div class="flex flex-col px-2">
           <div class="text- flex-none py-1 text-xl font-bold">{{ title }}</div>
@@ -49,10 +61,14 @@ export default {
   props: {
     title: "Skills",
     text: "Contents",
-    imgTitle: { default: "Python" },
     tags: { default: [] },
     link: { default: "" },
-    src: { default: "" },
+    src: { default: "/error-404.png" },
+  },
+  computed: {
+    isPng() {
+      return this.src.toLowerCase().endsWith(".png");
+    },
   },
   components: {
     Icon,

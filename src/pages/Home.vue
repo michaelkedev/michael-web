@@ -13,9 +13,7 @@
 
       <div class="mt-6 font-bold md:text-2xl">A Bit About Me</div>
       <div class="mt-2 text-base text-stone-400 md:max-w-xl md:text-xl">
-        I'm a paragraph. Click here to add your own text and edit me. I’m a
-        great place for you to tell a story and let your users know a little
-        more about you.
+        Hello, I'm Michael. Welcome to my website.
       </div>
     </div>
   </div>
