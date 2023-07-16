@@ -14,3 +14,7 @@ body {
 .markdown ul {
   @apply my-3 pl-5;
 }
+
+.markdown * code {
+  @apply rounded px-1.5 py-0.5 transition-all group-hover:bg-stone-700 group-hover:text-stone-300;
+}
