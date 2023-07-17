@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group flex text-stone-700 transition-all first:text-stone-200 hover:text-stone-200"
+    class="group flex transition-all first:text-stone-200 md:text-stone-700 md:hover:text-stone-200"
   >
     <div class="relative flex flex-none flex-col items-center pl-3">
       <div
@@ -42,7 +42,7 @@
           class="markdown flex-1 overflow-hidden overflow-ellipsis opacity-70"
           v-html="text"
         ></div>
-        <div class="mt-2 flex flex-wrap space-x-2">
+        <div class="mt-2 flex flex-wrap gap-2">
           <div
             v-for="tag in tags"
             :key="tag"
@@ -60,6 +60,11 @@
 import Icon from "./Icon.vue";
 
 export default {
+  data() {
+    return {
+      reachedScrollPosition: false,
+    };
+  },
   props: {
     time: { default: "2023-" },
     slash: { default: " - " },
@@ -70,6 +75,15 @@ export default {
     website: { default: "" },
   },
   components: { Icon },
+  methods: {
+    onScroll(event) {
+      const scrollPosition = event.target.scrollTop;
+      console.log(scrollPosition);
+      const threshold = 50; // 设定特定位置的阈值
+
+      this.reachedScrollPosition = scrollPosition >= threshold;
+    },
+  },
 };
 </script>
 

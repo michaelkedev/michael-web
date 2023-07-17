@@ -36,11 +36,20 @@
         <div class="text-2xl font-bold">Experience</div>
         <div class="pl-2 text-xs font-bold text-stone-500">經歷</div>
       </div>
-      <div class="flex w-full flex-col overflow-hidden pt-5">
+      <!-- 
+        set referrance to the container of EList,
+        for getting height of container.
+      -->
+      <div
+        class="flex w-full flex-col overflow-hidden pt-5"
+        ref="eListContainer"
+      >
         <EList
-          v-for="experience in experiences"
+          v-for="(experience, index) in experiences"
           v-bind="experience"
           :key="experience.text"
+          class="text-stone-700"
+          :class="[scrollToMe(index) && ' text-stone-50']"
         />
       </div>
     </div>
@@ -54,6 +63,9 @@ import AniText from "../components/AniText.vue";
 import { toMD } from "../utils/markdown";
 
 export default {
+  props: {
+    scrollPosition: { default: 0 },
+  },
   data() {
     return {
       skills: [
@@ -66,7 +78,7 @@ export default {
           title: "前端技術",
           text: toMD(`
             HTML、CSS、JavaScript
-            
+
             **學習中:**
 
             Vue3.0、Tailwind CSS
@@ -110,7 +122,7 @@ export default {
             - YOLO 辨識工廠內物件
             - OpenCV 影像處理 (輪廓檢測、顏色辨識)
             - API 開發
-            
+
             **C#**
             - FineReport
             - BI 軟體維護
@@ -153,6 +165,8 @@ export default {
         },
         // markdown-it
       ],
+
+      scrolledIndex: -1,
     };
   },
   mounted() {
@@ -161,8 +175,39 @@ export default {
 
     // 回傳回父層
     this.$emit("routeChanged", currentPage);
+    console.log(this.scrollPosition);
   },
-  methods: {},
+  watch: {
+    scrollPosition(val) {
+      // val 是新值
+      console.log(val);
+      // console.log(this.scrollPosition);
+
+      const { height, top } = this.$refs.eListContainer.getBoundingClientRect();
+      // console.log(Math.abs(top) / height);
+      const blockRange = height / this.experiences.length;
+      const scrollRange =
+        height > window.innerHeight ? height - window.innerHeight : 0;
+
+      // console.log(top);
+      if (-top > 0 && scrollRange > 0) {
+        let index = Math.floor(((-top / scrollRange) * height) / blockRange);
+
+        if (index > this.experiences.length - 1)
+          index = this.experiences.length - 1;
+
+        console.log(index);
+        console.log(this.experiences[index].title);
+
+        this.scrolledIndex = index;
+      }
+    },
+  },
+  methods: {
+    scrollToMe(index) {
+      return this.scrolledIndex === index && window.innerWidth < 768;
+    },
+  },
   components: { EList, SList, AniText },
 };
 </script>
