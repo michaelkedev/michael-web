@@ -1,6 +1,7 @@
 <template>
   <div
     class="flex h-screen w-screen flex-col items-center overflow-y-auto bg-stone-950"
+    @scroll="onScroll"
   >
     <div class="w-full p-1.5">
       <div
@@ -22,7 +23,10 @@
       />
     </div>
     <div class="w-full max-w-3xl text-white">
-      <router-view @routeChanged="currentPage = $event" />
+      <router-view
+        :scrollPosition="scrollPosition"
+        @routeChanged="currentPage = $event"
+      />
     </div>
   </div>
 </template>
@@ -44,13 +48,21 @@ export default {
         { link: "/contact", text: "Contact" },
       ],
       currentPage: "",
+      scrollPosition: "",
     };
   },
   // 元件被掛載時執行
   mounted() {},
 
   // 元件內 function
-  methods: {},
+  methods: {
+    onScroll(event) {
+      this.scrollPosition = event.target.scrollTop;
+
+      // this.scrollPositionA = event.target.scro
+      // console.log("app : " + this.scrollPosition);
+    },
+  },
 
   // 使用到的元件
   components: { LinkButton },
