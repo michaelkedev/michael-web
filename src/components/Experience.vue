@@ -61,9 +61,7 @@ import Icon from "./Icon.vue";
 
 export default {
   data() {
-    return {
-      reachedScrollPosition: false,
-    };
+    return {};
   },
   props: {
     time: { default: "2023-" },
@@ -75,15 +73,7 @@ export default {
     website: { default: "" },
   },
   components: { Icon },
-  methods: {
-    onScroll(event) {
-      const scrollPosition = event.target.scrollTop;
-      console.log(scrollPosition);
-      const threshold = 50; // 设定特定位置的阈值
-
-      this.reachedScrollPosition = scrollPosition >= threshold;
-    },
-  },
+  methods: {},
 };
 </script>
 

@@ -49,7 +49,7 @@
           v-bind="experience"
           :key="experience.text"
           class="text-stone-700"
-          :class="[scrollToMe(index) && ' text-yellow-300']"
+          :class="[scrollToMe(index) && '!text-stone-200']"
         />
       </div>
     </div>
