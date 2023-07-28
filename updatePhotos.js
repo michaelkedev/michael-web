@@ -1,4 +1,5 @@
-const fs = require("fs");
+import fs from "fs";
+
 const filePath = "./public/gallery/";
 
 const msg = (type, msg) => {
@@ -31,14 +32,26 @@ const createFileList = () => {
   }
 };
 
-const mode = process.argv[2] ?? "";
+export default () => {
+  return {
+    name: "update-photo-list",
 
-if (["-w", "--watch"].includes(mode)) {
-  msg("Watching", "start watching files...");
+    // 在 vite core 前執行
+    enforce: "pre",
 
-  fs.watch(filePath, (event, filename) => {
-    msg("Watching", `${event}-detected: ${filename}`);
-    createFileList();
-  });
-}
-createFileList();
+    // dev server 準備開啟時
+    configureServer(server) {
+      msg("Watching", "start watching files...");
+
+      fs.watch(filePath, (event, filename) => {
+        msg("Watching", `${event}-detected: ${filename}`);
+        createFileList();
+      });
+    },
+
+    // build 開始前
+    buildStart() {
+      createFileList();
+    },
+  };
+};
